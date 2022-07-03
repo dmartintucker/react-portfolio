@@ -1,7 +1,11 @@
 import React from "react";
+import { HashLink as Link } from "react-router-hash-link";
 
+// Stylesheets
 import "../styles/Navbar.css";
 
+// Icons
+import CloseIcon from "../assets/close.svg";
 import LogoIcon from "../assets/logo.svg";
 import MenuIcon from "../assets/menu.svg";
 
@@ -18,14 +22,20 @@ class Navbar extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <nav className="navbar-container" style={{ overflow: this.state.toggle ? "auto" : "hidden" }}>
+        <nav className="navbar-container">
           <div className="navbar">
-            <img src={LogoIcon} alt="logo" />
-            <img src={MenuIcon} alt="menu" onClick={this.toggleHander} />
+            <Link to="/">
+              <img src={LogoIcon} alt="logo" />
+            </Link>
+            <img src={this.state.toggle ? CloseIcon : MenuIcon} alt="menu" onClick={this.toggleHander} />
           </div>
-          <div className="navbar-overflow">
-            <p>About</p>
-            <p>Work</p>
+          <div className="navbar-overflow" style={{ display: this.state.toggle ? "flex" : "none" }}>
+            <Link onClick={this.toggleHander} to="/about">
+              About
+            </Link>
+            <Link onClick={this.toggleHander} to="/#section-work">
+              Work
+            </Link>
             <p>Contact</p>
           </div>
         </nav>

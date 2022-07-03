@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // Images
 import Babbel from "../assets/babbel.png";
@@ -10,12 +11,10 @@ import Tutorme from "../assets/tutorme.png";
 import "../styles/Home.css";
 
 // Components
-import Navbar from "../components/Navbar";
 
 const Home = () => {
   return (
     <React.Fragment>
-      <Navbar />
       <main className="container">
         {/* HERO SECTION */}
         <section className="flex-section" id="section-hero">
@@ -31,26 +30,26 @@ const Home = () => {
           </h5>
         </section>
 
-        {/* HERO SECTION */}
+        {/* WORK SECTION */}
         <section className="flex-section" id="section-work">
           <h2>Recent Work</h2>
 
           <div className="grid-container">
-            <div className="img-container">
+            <Link className="img-container" to={`/work/ditto`}>
               <img src={Ditto} alt="" />
-            </div>
+            </Link>
 
-            <div className="img-container">
+            <Link className="img-container" to={`/work/mango`}>
               <img src={Mango} alt="" />
-            </div>
+            </Link>
 
-            <div className="img-container">
+            <Link className="img-container" to={`/work/babbel`}>
               <img src={Babbel} alt="" />
-            </div>
+            </Link>
 
-            <div className="img-container">
+            <Link className="img-container" to={`/work/tutorme`}>
               <img src={Tutorme} alt="" />
-            </div>
+            </Link>
           </div>
         </section>
       </main>

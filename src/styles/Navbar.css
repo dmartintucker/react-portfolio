@@ -7,7 +7,6 @@
   position: fixed;
   top: 0;
   width: 100vw;
-  height: fit-content;
   background-color: var(--background-white);
   transition: height 0.5s ease;
   overflow: hidden;
@@ -18,9 +17,8 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  /* height: 64px; */
-  height: fit-content;
-  padding: 24px;
+  height: 64px;
+  padding: 0 24px;
   width: 100%;
   border-bottom: 2px solid #f8f8f8;
 }
@@ -39,7 +37,10 @@
 @media only screen and (min-width: 480px) {
   .navbar {
     max-width: 960px;
-    padding: 24px 0;
+    padding: 0;
+  }
+  .navbar-container {
+    padding: 0 24px;
   }
 }
 
